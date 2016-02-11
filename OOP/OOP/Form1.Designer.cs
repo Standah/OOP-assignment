@@ -23,20 +23,23 @@
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent () {
+            this.components = new System.ComponentModel.Container();
             this.btnSample = new System.Windows.Forms.Button();
             this.mnuTop = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpSampling = new System.Windows.Forms.GroupBox();
-            this.grpLogging = new System.Windows.Forms.GroupBox();
-            this.btnLogging = new System.Windows.Forms.Button();
-            this.lblSampling = new System.Windows.Forms.Label();
-            this.lblLogging = new System.Windows.Forms.Label();
-            this.grpSensors = new System.Windows.Forms.GroupBox();
             this.txtSampling = new System.Windows.Forms.TextBox();
+            this.lblSampling = new System.Windows.Forms.Label();
+            this.grpLogging = new System.Windows.Forms.GroupBox();
             this.txtLogging = new System.Windows.Forms.TextBox();
+            this.lblLogging = new System.Windows.Forms.Label();
+            this.btnLogging = new System.Windows.Forms.Button();
+            this.grpSensors = new System.Windows.Forms.GroupBox();
             this.txtSensors = new System.Windows.Forms.TextBox();
+            this.tmrSample = new System.Windows.Forms.Timer(this.components);
+            this.tmrLogging = new System.Windows.Forms.Timer(this.components);
             this.mnuTop.SuspendLayout();
             this.grpSampling.SuspendLayout();
             this.grpLogging.SuspendLayout();
@@ -52,6 +55,7 @@
             this.btnSample.TabIndex = 0;
             this.btnSample.Text = "Sample";
             this.btnSample.UseVisualStyleBackColor = true;
+            this.btnSample.Click += new System.EventHandler(this.btnSample_Click);
             // 
             // mnuTop
             // 
@@ -95,7 +99,25 @@
             this.grpSampling.TabIndex = 3;
             this.grpSampling.TabStop = false;
             this.grpSampling.Text = "Sampling";
-            this.grpSampling.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtSampling
+            // 
+            this.txtSampling.Enabled = false;
+            this.txtSampling.Location = new System.Drawing.Point(152, 32);
+            this.txtSampling.Name = "txtSampling";
+            this.txtSampling.ReadOnly = true;
+            this.txtSampling.Size = new System.Drawing.Size(100, 22);
+            this.txtSampling.TabIndex = 2;
+            this.txtSampling.Text = "READY";
+            // 
+            // lblSampling
+            // 
+            this.lblSampling.AutoSize = true;
+            this.lblSampling.Location = new System.Drawing.Point(7, 32);
+            this.lblSampling.Name = "lblSampling";
+            this.lblSampling.Size = new System.Drawing.Size(133, 17);
+            this.lblSampling.TabIndex = 1;
+            this.lblSampling.Text = "Next Sampling Time";
             // 
             // grpLogging
             // 
@@ -109,24 +131,15 @@
             this.grpLogging.TabStop = false;
             this.grpLogging.Text = "Logging";
             // 
-            // btnLogging
+            // txtLogging
             // 
-            this.btnLogging.AccessibleName = "";
-            this.btnLogging.Location = new System.Drawing.Point(6, 59);
-            this.btnLogging.Name = "btnLogging";
-            this.btnLogging.Size = new System.Drawing.Size(75, 35);
-            this.btnLogging.TabIndex = 0;
-            this.btnLogging.Text = "Logging on File";
-            this.btnLogging.UseVisualStyleBackColor = true;
-            // 
-            // lblSampling
-            // 
-            this.lblSampling.AutoSize = true;
-            this.lblSampling.Location = new System.Drawing.Point(7, 32);
-            this.lblSampling.Name = "lblSampling";
-            this.lblSampling.Size = new System.Drawing.Size(133, 17);
-            this.lblSampling.TabIndex = 1;
-            this.lblSampling.Text = "Next Sampling Time";
+            this.txtLogging.Enabled = false;
+            this.txtLogging.Location = new System.Drawing.Point(152, 21);
+            this.txtLogging.Name = "txtLogging";
+            this.txtLogging.ReadOnly = true;
+            this.txtLogging.Size = new System.Drawing.Size(100, 22);
+            this.txtLogging.TabIndex = 3;
+            this.txtLogging.Text = "READY";
             // 
             // lblLogging
             // 
@@ -137,6 +150,17 @@
             this.lblLogging.TabIndex = 1;
             this.lblLogging.Text = "Next Logging Time";
             // 
+            // btnLogging
+            // 
+            this.btnLogging.AccessibleName = "";
+            this.btnLogging.Location = new System.Drawing.Point(6, 59);
+            this.btnLogging.Name = "btnLogging";
+            this.btnLogging.Size = new System.Drawing.Size(75, 35);
+            this.btnLogging.TabIndex = 0;
+            this.btnLogging.Text = "Logging on File";
+            this.btnLogging.UseVisualStyleBackColor = true;
+            this.btnLogging.Click += new System.EventHandler(this.btnLogging_Click);
+            // 
             // grpSensors
             // 
             this.grpSensors.Controls.Add(this.txtSensors);
@@ -146,32 +170,24 @@
             this.grpSensors.TabIndex = 5;
             this.grpSensors.TabStop = false;
             this.grpSensors.Text = "Sensor Values";
-            this.grpSensors.Enter += new System.EventHandler(this.groupBox1_Enter_1);
-            // 
-            // txtSampling
-            // 
-            this.txtSampling.Location = new System.Drawing.Point(152, 32);
-            this.txtSampling.Name = "txtSampling";
-            this.txtSampling.ReadOnly = true;
-            this.txtSampling.Size = new System.Drawing.Size(100, 22);
-            this.txtSampling.TabIndex = 2;
-            // 
-            // txtLogging
-            // 
-            this.txtLogging.Location = new System.Drawing.Point(152, 21);
-            this.txtLogging.Name = "txtLogging";
-            this.txtLogging.ReadOnly = true;
-            this.txtLogging.Size = new System.Drawing.Size(100, 22);
-            this.txtLogging.TabIndex = 3;
             // 
             // txtSensors
             // 
+            this.txtSensors.Enabled = false;
             this.txtSensors.Location = new System.Drawing.Point(16, 32);
             this.txtSensors.Multiline = true;
             this.txtSensors.Name = "txtSensors";
             this.txtSensors.ReadOnly = true;
             this.txtSensors.Size = new System.Drawing.Size(166, 255);
             this.txtSensors.TabIndex = 0;
+            // 
+            // tmrSample
+            // 
+            this.tmrSample.Tick += new System.EventHandler(this.tmrSample_Tick);
+            // 
+            // tmrLogging
+            // 
+            this.tmrLogging.Tick += new System.EventHandler(this.tmrLogging_Tick);
             // 
             // Form1
             // 
@@ -213,6 +229,8 @@
         private System.Windows.Forms.TextBox txtSampling;
         private System.Windows.Forms.TextBox txtLogging;
         private System.Windows.Forms.TextBox txtSensors;
+        private System.Windows.Forms.Timer tmrSample;
+        private System.Windows.Forms.Timer tmrLogging;
         }
     }
 

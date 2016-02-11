@@ -9,21 +9,54 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OOP {
+
     public partial class Form1:Form {
         public Form1 () {
             InitializeComponent ();
             }
 
-        private void button1_Click (object sender, EventArgs e) {
+        static double sampleTime = 2;
+        static double loggingTime = 5;
+        double timeLeftSampling = sampleTime;
+        double timeLeftLogging = loggingTime;
 
-            }
+        private void btnSample_Click (object sender, EventArgs e) {
+            tmrSample.Enabled = true;
+            txtSensors.Text = DateTime.Now.ToLongTimeString ();
 
-        private void groupBox1_Enter (object sender, EventArgs e) {
+            } // end btnSample_Click
 
-            }
+        private void btnLogging_Click (object sender, EventArgs e) {
+            tmrLogging.Enabled = true;
 
-        private void groupBox1_Enter_1 (object sender, EventArgs e) {
+            } // end btnLogging_Click
 
-            }
-        }
-    }
+        private void tmrSample_Tick (object sender, EventArgs e) {
+            if (timeLeftSampling >= 0.1) {
+                btnSample.Enabled = false;
+                timeLeftSampling = timeLeftSampling - 0.1;
+                txtSampling.Text = timeLeftSampling.ToString ("F");
+                } 
+            else {
+                btnSample.Enabled = true;
+                txtSampling.Text = "READY";
+                tmrSample.Enabled = false;
+                timeLeftSampling = sampleTime;
+                }
+            
+            } // end timer1_Tick
+
+        private void tmrLogging_Tick (object sender, EventArgs e) {
+            if (timeLeftLogging >= 0.1) {
+                btnLogging.Enabled = false;
+                timeLeftLogging = timeLeftLogging - 0.1;
+                txtLogging.Text = timeLeftLogging.ToString ("F");
+                } else {
+                btnLogging.Enabled = true;
+                txtLogging.Text = "READY";
+                tmrLogging.Enabled = false;
+                timeLeftLogging = loggingTime;
+                }
+            } // end timer2_Tick
+        } // end Form1:Form
+    } // end OOP
