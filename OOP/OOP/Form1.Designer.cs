@@ -49,9 +49,10 @@
             // btnSample
             // 
             this.btnSample.AccessibleName = "";
-            this.btnSample.Location = new System.Drawing.Point(6, 59);
+            this.btnSample.Location = new System.Drawing.Point(4, 48);
+            this.btnSample.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSample.Name = "btnSample";
-            this.btnSample.Size = new System.Drawing.Size(75, 35);
+            this.btnSample.Size = new System.Drawing.Size(56, 28);
             this.btnSample.TabIndex = 0;
             this.btnSample.Text = "Sample";
             this.btnSample.UseVisualStyleBackColor = true;
@@ -66,36 +67,41 @@
             this.helpToolStripMenuItem});
             this.mnuTop.Location = new System.Drawing.Point(0, 0);
             this.mnuTop.Name = "mnuTop";
-            this.mnuTop.Size = new System.Drawing.Size(580, 28);
+            this.mnuTop.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.mnuTop.Size = new System.Drawing.Size(436, 24);
             this.mnuTop.TabIndex = 1;
             this.mnuTop.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // operationsToolStripMenuItem
             // 
             this.operationsToolStripMenuItem.Name = "operationsToolStripMenuItem";
-            this.operationsToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
+            this.operationsToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.operationsToolStripMenuItem.Text = "Operations";
             // 
             // helpToolStripMenuItem
             // 
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 24);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // grpSampling
             // 
+            this.grpSampling.BackColor = System.Drawing.SystemColors.Control;
             this.grpSampling.Controls.Add(this.txtSampling);
             this.grpSampling.Controls.Add(this.lblSampling);
             this.grpSampling.Controls.Add(this.btnSample);
-            this.grpSampling.Location = new System.Drawing.Point(35, 58);
+            this.grpSampling.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.grpSampling.Location = new System.Drawing.Point(26, 47);
+            this.grpSampling.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpSampling.Name = "grpSampling";
-            this.grpSampling.Size = new System.Drawing.Size(270, 100);
+            this.grpSampling.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpSampling.Size = new System.Drawing.Size(202, 81);
             this.grpSampling.TabIndex = 3;
             this.grpSampling.TabStop = false;
             this.grpSampling.Text = "Sampling";
@@ -103,19 +109,21 @@
             // txtSampling
             // 
             this.txtSampling.Enabled = false;
-            this.txtSampling.Location = new System.Drawing.Point(152, 32);
+            this.txtSampling.Location = new System.Drawing.Point(114, 26);
+            this.txtSampling.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSampling.Name = "txtSampling";
             this.txtSampling.ReadOnly = true;
-            this.txtSampling.Size = new System.Drawing.Size(100, 22);
+            this.txtSampling.Size = new System.Drawing.Size(76, 20);
             this.txtSampling.TabIndex = 2;
             this.txtSampling.Text = "READY";
             // 
             // lblSampling
             // 
             this.lblSampling.AutoSize = true;
-            this.lblSampling.Location = new System.Drawing.Point(7, 32);
+            this.lblSampling.Location = new System.Drawing.Point(5, 26);
+            this.lblSampling.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSampling.Name = "lblSampling";
-            this.lblSampling.Size = new System.Drawing.Size(133, 17);
+            this.lblSampling.Size = new System.Drawing.Size(101, 13);
             this.lblSampling.TabIndex = 1;
             this.lblSampling.Text = "Next Sampling Time";
             // 
@@ -124,9 +132,11 @@
             this.grpLogging.Controls.Add(this.txtLogging);
             this.grpLogging.Controls.Add(this.lblLogging);
             this.grpLogging.Controls.Add(this.btnLogging);
-            this.grpLogging.Location = new System.Drawing.Point(35, 229);
+            this.grpLogging.Location = new System.Drawing.Point(26, 186);
+            this.grpLogging.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpLogging.Name = "grpLogging";
-            this.grpLogging.Size = new System.Drawing.Size(270, 100);
+            this.grpLogging.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpLogging.Size = new System.Drawing.Size(202, 81);
             this.grpLogging.TabIndex = 4;
             this.grpLogging.TabStop = false;
             this.grpLogging.Text = "Logging";
@@ -134,28 +144,31 @@
             // txtLogging
             // 
             this.txtLogging.Enabled = false;
-            this.txtLogging.Location = new System.Drawing.Point(152, 21);
+            this.txtLogging.Location = new System.Drawing.Point(114, 17);
+            this.txtLogging.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLogging.Name = "txtLogging";
             this.txtLogging.ReadOnly = true;
-            this.txtLogging.Size = new System.Drawing.Size(100, 22);
+            this.txtLogging.Size = new System.Drawing.Size(76, 20);
             this.txtLogging.TabIndex = 3;
             this.txtLogging.Text = "READY";
             // 
             // lblLogging
             // 
             this.lblLogging.AutoSize = true;
-            this.lblLogging.Location = new System.Drawing.Point(10, 22);
+            this.lblLogging.Location = new System.Drawing.Point(8, 18);
+            this.lblLogging.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLogging.Name = "lblLogging";
-            this.lblLogging.Size = new System.Drawing.Size(126, 17);
+            this.lblLogging.Size = new System.Drawing.Size(96, 13);
             this.lblLogging.TabIndex = 1;
             this.lblLogging.Text = "Next Logging Time";
             // 
             // btnLogging
             // 
             this.btnLogging.AccessibleName = "";
-            this.btnLogging.Location = new System.Drawing.Point(6, 59);
+            this.btnLogging.Location = new System.Drawing.Point(4, 48);
+            this.btnLogging.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogging.Name = "btnLogging";
-            this.btnLogging.Size = new System.Drawing.Size(75, 35);
+            this.btnLogging.Size = new System.Drawing.Size(56, 28);
             this.btnLogging.TabIndex = 0;
             this.btnLogging.Text = "Logging on File";
             this.btnLogging.UseVisualStyleBackColor = true;
@@ -164,9 +177,11 @@
             // grpSensors
             // 
             this.grpSensors.Controls.Add(this.txtSensors);
-            this.grpSensors.Location = new System.Drawing.Point(344, 58);
+            this.grpSensors.Location = new System.Drawing.Point(258, 47);
+            this.grpSensors.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.grpSensors.Name = "grpSensors";
-            this.grpSensors.Size = new System.Drawing.Size(197, 302);
+            this.grpSensors.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpSensors.Size = new System.Drawing.Size(148, 245);
             this.grpSensors.TabIndex = 5;
             this.grpSensors.TabStop = false;
             this.grpSensors.Text = "Sensor Values";
@@ -174,11 +189,12 @@
             // txtSensors
             // 
             this.txtSensors.Enabled = false;
-            this.txtSensors.Location = new System.Drawing.Point(16, 32);
+            this.txtSensors.Location = new System.Drawing.Point(12, 26);
+            this.txtSensors.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSensors.Multiline = true;
             this.txtSensors.Name = "txtSensors";
             this.txtSensors.ReadOnly = true;
-            this.txtSensors.Size = new System.Drawing.Size(166, 255);
+            this.txtSensors.Size = new System.Drawing.Size(126, 208);
             this.txtSensors.TabIndex = 0;
             // 
             // tmrSample
@@ -191,16 +207,19 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(580, 388);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(436, 315);
             this.Controls.Add(this.grpSensors);
             this.Controls.Add(this.grpLogging);
             this.Controls.Add(this.grpSampling);
             this.Controls.Add(this.mnuTop);
             this.MainMenuStrip = this.mnuTop;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "DAQ Simulator";
+            this.TransparencyKey = System.Drawing.Color.White;
             this.mnuTop.ResumeLayout(false);
             this.mnuTop.PerformLayout();
             this.grpSampling.ResumeLayout(false);
