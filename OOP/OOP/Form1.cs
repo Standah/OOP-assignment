@@ -48,7 +48,8 @@ namespace OOP {
 
         private void btnLogging_Click (object sender, EventArgs e) {
             tmrLogging.Enabled = true;
-            using (StreamWriter writer = File.AppendText ("log.txt")) writer.WriteLine (output.Replace (" ", ", ")); // format output string to add commas
+            string filename = DateTime.Now.ToShortDateString () + ".txt";
+            using (StreamWriter writer = File.AppendText (filename)) writer.WriteLine (output.Replace (" ", ", ")); // format output string to add commas
             } // end btnLogging_Click
 
         private void tmrSample_Tick (object sender, EventArgs e) {
@@ -78,5 +79,9 @@ namespace OOP {
                 } // end else
             } // end timer2_Tick
 
+        private void aboutToolStripMenuItem_Click (object sender, EventArgs e) {
+            MessageBox.Show ("This application was made as part of an assignment for SCE1306 Object-oriented Analysis, Design and Programming fall 2016.",
+            "About", System.Windows.Forms.MessageBoxButtons.OK);
+            }
         } // end Form1:Form
     } // end OOP
